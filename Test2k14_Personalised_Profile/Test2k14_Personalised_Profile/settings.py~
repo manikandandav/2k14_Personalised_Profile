@@ -1,4 +1,5 @@
 # Django settings for Test2k14_Personalised_Profile project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -107,6 +108,7 @@ ROOT_URLCONF = 'Test2k14_Personalised_Profile.urls'
 WSGI_APPLICATION = 'Test2k14_Personalised_Profile.wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.expanduser('~/Test2k14_Personalised_Profile/Test2k14_Personalised_Profile/templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -121,7 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    'bootstrap',
+    #'bootstrap',
     'users',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',

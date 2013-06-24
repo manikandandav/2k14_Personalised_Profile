@@ -89,7 +89,7 @@ class UserProfile(models.Model):
 
 #    is_coord        = models.BooleanField....(default = False)
 
-     is_coord_of = models.ForeignKey(Event, null=True)
+    is_coord_of = models.ForeignKey(Event, null=True)
 
 #    registered      = models.ManyToManyField(Event, null=True, related_name='registered_users')        #Events which this user has registered for
 
