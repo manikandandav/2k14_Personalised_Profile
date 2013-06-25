@@ -78,7 +78,8 @@ def login_post(request):
         else:
             return HttpResponseRedirect(settings.BASE_URL)
 	'''
-    msg = 'Username and Password does not match.'
+    
+    msg = 'Username and Password does not match!!!'  
     form = LoginForm()
     return render_to_response('users/login.html', locals(),
                               context_instance=RequestContext(request))

@@ -49,9 +49,10 @@ BRANCH_CHOICES = (
 
 class LoginForm(forms.Form):
 
-    username = forms.CharField(help_text='Your Shaastra 2013 username')
+    username = forms.EmailField(help_text='Your Shaastra 2013 username')
     password = forms.CharField(widget=forms.PasswordInput,
                                help_text='Your password')
+    #errors=[]
 class BaseUserForm(forms.ModelForm):
 
     first_name = forms.CharField(max_length=30)
