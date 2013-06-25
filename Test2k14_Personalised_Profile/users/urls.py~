@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 from django.conf.urls.defaults import *
 import users
 import django.contrib.auth.views
@@ -10,7 +9,6 @@ from django.contrib.sites import *
 from django.contrib.sitemaps import *
 #from sitemaps import *
 from django.contrib.sites import *
-from users import views
 
 urlpatterns = patterns(  #    url(r'^reset/(?P[0-9A-Za-z]+)-(?P.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
     '',

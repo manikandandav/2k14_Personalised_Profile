@@ -6,6 +6,7 @@ from django.contrib.auth.models import User, Group
 from django.template.context import Context, RequestContext
 from django.template.loader import get_template
 from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login as auth_login, \
     logout as auth_logout
@@ -19,9 +20,19 @@ from django.contrib.sessions.models import Session
 #from django.core.mail import EmailMessage, EmailMultiAlternatives
 #from django.core.mail import send_mail as mailsender
 #from recaptcha.client import captcha
-#import sha
-#import random
-#import datetime
+import sha
+import random
+import datetime
+
+
+def method_splitter(request, *args, **kwargs):
+    get_view = kwargs.pop('GET', None)
+    post_view = kwargs.pop('POST', None)
+    if request.method == 'GET' and get_view is not None:
+        return get_view(request, *args, **kwargs)
+    elif request.method == 'POST' and post_view is not None:
+        return post_view(request, *args, **kwargs)
+    raise Http404
 
 def login_get(request):
     if request.user.is_authenticated():
